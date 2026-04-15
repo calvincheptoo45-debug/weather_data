@@ -9,20 +9,21 @@
 <body>
     <h1>Weather Alerts App</h1>
 
-    <div class="input-section">
-        <input 
-            id="state" 
-            type="text" 
-            placeholder="Enter state abbreviation"
-        />
+    <input 
+        id="state"
+        type="text"
+        placeholder="Enter state abbreviation"
+    />
 
-        <button id="fetch-alerts">
-            Get Weather Alerts
-        </button>
-    </div>
+    <button id="fetch-alerts">
+        Get Weather Alerts
+    </button>
 
-    <div id="alerts"></div>
-    <div id="error"></div>
+    <!-- REQUIRED BY TEST -->
+    <div id="alerts-display"></div>
+
+    <!-- REQUIRED BY TEST -->
+    <div id="error-message" class="hidden"></div>
 
     <script src="index.js"></script>
 </body>

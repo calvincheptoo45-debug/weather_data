@@ -1,38 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
     const input = document.querySelector("#state");
     const button = document.querySelector("#fetch-alerts");
-    const output = document.querySelector("#alerts");
-    const errorBox = document.querySelector("#error");
+    const displayDiv = document.querySelector("#alerts-display");
+    const errorDiv = document.querySelector("#error-message");
 
     button.addEventListener("click", async () => {
         const state = input.value.trim();
 
-        // required by tests
+        // clear input
         input.value = "";
-        output.textContent = "";
-        errorBox.textContent = "";
+
+        // clear UI
+        displayDiv.textContent = "";
+        errorDiv.textContent = "";
+        errorDiv.classList.add("hidden");
 
         try {
-            const response = await fetch(
+            const res = await fetch(
                 `https://api.weather.gov/alerts/active?area=${state}`
             );
 
-            if (!response.ok) {
-                throw new Error("Network error");
-            }
+            if (!res.ok) throw new Error("Network failure");
 
-            const data = await response.json();
+            const data = await res.json();
 
-            if (data.features.length === 0) {
-                output.textContent = "No alerts found.";
-                return;
-            }
+            const alerts = data.features;
 
-            // show first alert headline
-            const alert = data.features[0].properties;
-            output.textContent = alert.headline || "Alert found";
+            // display number of alerts
+            displayDiv.textContent = `Weather Alerts: ${alerts.length}`;
+
+            // display each alert
+            alerts.forEach(alert => {
+                const p = document.createElement("p");
+                p.textContent = alert.properties.headline;
+                displayDiv.appendChild(p);
+            });
+
         } catch (err) {
-            errorBox.textContent = "Error fetching alerts!";
+            errorDiv.textContent = err.message;
+            errorDiv.classList.remove("hidden");
         }
     });
 });

@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather Alerts App</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Alerts</title>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Weather Alerts</h1>
-
-    <p>Enter a U.S. state abbreviation (e.g. CA, NY, TX)</p>
+    <h1>Weather Alerts App</h1>
 
     <div class="input-section">
-      <input
-        type="text"
-        id="stateInput"
-        placeholder="Enter state (e.g. CA)"
-      />
+        <input 
+            id="state" 
+            type="text" 
+            placeholder="Enter state abbreviation"
+        />
 
-      <button id="fetchBtn">Get Alerts</button>
+        <button id="fetch-alerts">
+            Get Weather Alerts
+        </button>
     </div>
 
-    <div id="weatherResults"></div>
-  </div>
+    <div id="alerts"></div>
+    <div id="error"></div>
 
-  <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

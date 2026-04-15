@@ -1,0 +1,90 @@
+/* General page styling */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f7fb;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Title */
+h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Input section */
+.input-section {
+  margin: 20px 0;
+}
+
+/* Input field */
+input {
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Button */
+button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  background-color: #0077ff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #005fcc;
+}
+
+/* Weather alert card */
+.alert-card {
+  background: white;
+  padding: 15px;
+  margin: 15px 0;
+  border-left: 5px solid #0077ff;
+  border-radius: 5px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Alert title */
+.alert-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #222;
+}
+
+/* Alert text */
+.alert-card p {
+  margin: 0;
+  color: #555;
+}
+
+/* Error box */
+.error {
+  background-color: #ffe5e5;
+  color: #cc0000;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid #ffb3b3;
+}
+
+/* No results message */
+p {
+  color: #444;
+}
